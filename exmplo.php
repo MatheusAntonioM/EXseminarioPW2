@@ -34,5 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['mensagem'])) {
         }
         ?>
     </ul>
+    ?php
+        if (!empty($_SESSION['mensagens'])) {
+            foreach ($_SESSION['mensagens'] as $msg) {
+                echo "<li>" . $msg . "</li>";
+            }
+        }
+        ?>
 </body>
 </html>
